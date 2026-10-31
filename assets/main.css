@@ -1,0 +1,152 @@
+:root {
+    --gold-500: hsl(31, 77%, 52%);
+    --cyan-800: hsl(184, 100%, 22%);
+    --green-950: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --gray-100: hsl(0, 0%, 95%);
+}
+
+body {
+    background: var(--gray-100);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    min-height: 100dvh;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 48px 0;
+    width: min(920px, calc(100% - 48px));
+}
+
+.card-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 442px;
+    padding: 48px;
+}
+
+.card:first-child {
+    background: var(--gold-500);
+}
+
+.card:nth-child(2) {
+    background: var(--cyan-800);
+}
+
+.card:last-child {
+    background: var(--green-950);
+    border-radius: 0 0 8px 8px;
+}
+
+.card:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.card-header {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-header img {
+    height: 40px;
+    width: 64px;
+}
+
+.card-header h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-top: 32px;
+}
+
+.card-body {
+    color: var(--transparent-white);
+    font-size: 15px;
+    line-height: 1.67;
+    margin-top: 24px;
+}
+
+.card-footer {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.card-footer button {
+    background: var(--gray-100);
+    border: 2px solid var(--gray-100);
+    border-radius: 999px;
+    cursor: pointer;
+    height: 48px;
+    text-transform: capitalize;
+    transition: background-color 160ms ease, color 160ms ease;
+    width: 146px;
+}
+
+.card:first-child .card-footer button {
+    color: var(--gold-500);
+}
+
+.card:nth-child(2) .card-footer button {
+    color: var(--cyan-800);
+}
+
+.card:last-child .card-footer button {
+    color: var(--green-950);
+}
+
+.card .card-footer button:hover,
+.card .card-footer button:focus-visible {
+    background: transparent;
+    border-color: white;
+    color: white;
+}
+
+.attribution {
+    color: var(--green-950);
+    font-size: 0.625rem;
+    padding: 0 0.75rem 0.75rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--gold-500);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 800px) {
+    .card-group {
+        flex-direction: row;
+    }
+
+    .card {
+        flex: 1;
+        min-height: 500px;
+    }
+
+    .card:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .card:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+}
